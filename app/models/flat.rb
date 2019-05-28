@@ -1,6 +1,6 @@
 class Flat < ApplicationRecord
   belongs_to :user
-  has_many :transactions, dependent: :destroy
+  has_many :orders, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true

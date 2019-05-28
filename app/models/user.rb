@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :flats, dependent: :destroy
-  has_many :transactions, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true
