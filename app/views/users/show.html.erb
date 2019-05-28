@@ -1,0 +1,31 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= "#{@user.firstname} #{@user.lastname}" %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+
+<!-- add foto do usuario -->
+<h1>Upload your pic</h1>
+
+<!-- colocar flats do usuario -->
+<h1>Seus flats:</h1>
+<!-- ex select all flats where id == current_user ?? -->
+
+<!-- suas transacoes (show do order)-->
+
+<!-- delete flat? -->
+<!-- deleter user -->
+
+<%= link_to 'Edit', edit_user_path(@user) %>
