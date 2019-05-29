@@ -23,3 +23,13 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+body {
+  background-image: url(ancientmars.jpg);
+  height: 100vh;
+  width: 100vw;
+  min-height: 350px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
