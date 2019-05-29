@@ -1,24 +1,21 @@
 
-
-
-
 <div class="container">
-<div class="row ">
-<% @flats.each do |flat| %>
-<div class="col-lg-3 mb-5">
+  <div class="row ">
+    <% @flats.each do |flat| %>
+    <div class="col-lg-3 mb-3 mt-3">
 
-<div class="card w-100">
-  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">
-      <p>Name: <%= link_to flat.name, flat %></p>
-      <p>Description: <%= flat.description %></p>
-      <p>Planet: <%= flat.planet %></p>
-      <p>Price: <%= flat.price %></p></p>
+      <div class="card w-100">
+        <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">
+            <p>Name: <%= link_to flat.name, flat %></p>
+            <p>Description: <%= flat.description %></p>
+            <p>Planet: <%= flat.planet %></p>
+            <p>Price: <%= flat.price %></p></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
+    <div class="btn btn-danger"><%= link_to 'Crete a flat', new_flat_path %></div>
   </div>
-</div>
-<% end %>
-</div>
-<%= link_to 'Crete a flat', new_flat_path %>
-</div>
