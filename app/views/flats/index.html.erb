@@ -1,15 +1,19 @@
 <div class="container">
-  <div class="content-wrapper">
-    <h1>All Flats</h1>
-    <ul>
+  <div class="row ">
     <% @flats.each do |flat| %>
-    <li><h2>Name: <%= link_to flat.name, flat %></h2></li>
-    <li><h3>Description: <%= flat.description %></h3></li>
-    <li><h3>Planet: <%= flat.planet %></h3></li>
-    <% end %>
-    </ul>
-
-    <br>
-    <%= link_to 'Crete a flat', new_flat_path, class: 'btn btn-outline-light' %>
+    <div class="col-lg-3 mb-3 mt-3">
+      <div class="card w-100">
+        <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">
+            <p>Name: <%= link_to flat.name, flat %></p>
+            <p>Description: <%= flat.description %></p>
+            <p>Planet: <%= flat.planet %></p>
+            <p>Price: <%= flat.price %></p></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+   <%= link_to 'Crete a flat', new_flat_path, class: 'btn btn-outline-light' %>
   </div>
-</div>
