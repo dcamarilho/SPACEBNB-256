@@ -1,6 +1,3 @@
-
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= "#{@user.firstname} #{@user.lastname}" %>
@@ -17,10 +14,14 @@
 </p>
 
 <!-- add foto do usuario -->
-<h1>Upload your pic</h1>
+<p>
+  <strong>Upload your pic:</strong>
+</p>
 
 <!-- colocar flats do usuario -->
-<h1>Seus flats:</h1>
+<p>
+  <strong>Seus flats:</strong>
+</p>
 <!-- ex select all flats where id == current_user ?? -->
 
 <!-- suas transacoes (show do order)-->
@@ -28,4 +29,4 @@
 <!-- delete flat? -->
 <!-- deleter user -->
 
-<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-outline-dark' %>
