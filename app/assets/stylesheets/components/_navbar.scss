@@ -19,17 +19,17 @@
 
 .dropdown-menu {
   background-color: transparent;
-
+  border: 0.5px solid rgba(255, 255, 255, 0.7);
 }
 
 .dropdown-item {
   color: white;
-  border: 0.4px solid rgba(255, 255, 255, 0.56);
+
   &:hover{
     background-color: transparent;
     color: white;
-    font-weight: bolder;
     text-decoration: underline;
+
   }
 
 }
