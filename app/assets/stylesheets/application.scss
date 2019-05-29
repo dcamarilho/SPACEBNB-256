@@ -12,3 +12,30 @@
 @import "components/index";
 @import "pages/index";
 
+
+body {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(galaxy.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+h1, h2, h3, p, {
+  color: white;
+}
+
+a {
+  color: white !important;
+}
+
+label {
+  color: white;
+}
+
+.content-wrapper {
+  padding-top: 100px;
+}
+
+
