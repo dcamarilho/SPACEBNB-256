@@ -1,34 +1,36 @@
 <div class="container">
-  <p>
-    <strong>Name:</strong>
-    <%= "#{@user.firstname} #{@user.lastname}" %>
-  </p>
+  <div class="content-wrapper">
+    <p>
+      <strong>Name:</strong>
+      <%= "#{@user.firstname} #{@user.lastname}" %>
+    </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
 
-  <p>
-    <strong>Phone:</strong>
-    <%= @user.phone %>
-  </p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @user.phone %>
+    </p>
 
-  <!-- add foto do usuario -->
-  <p>
-    <strong>Upload your pic:</strong>
-  </p>
+    <!-- add foto do usuario -->
+    <p>
+      <strong>Upload your pic:</strong>
+    </p>
 
-  <!-- colocar flats do usuario -->
-  <p>
-    <strong>Seus flats:</strong>
-  </p>
-  <!-- ex select all flats where id == current_user ?? -->
+    <!-- colocar flats do usuario -->
+    <p>
+      <strong>Seus flats:</strong>
+    </p>
+    <!-- ex select all flats where id == current_user ?? -->
 
-  <!-- suas transacoes (show do order)-->
+    <!-- suas transacoes (show do order)-->
 
-  <!-- delete flat? -->
-  <!-- deleter user -->
-
-  <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-outline-dark' %>
+    <!-- delete flat? -->
+    <!-- deleter user -->
+    <br>
+    <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-outline-dark' %>
+  </div>
 </div>

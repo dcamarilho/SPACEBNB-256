@@ -1,26 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="content-wrapper">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @flat.name %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @flat.name %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @flat.user.email %>
-</p>
+    <p>
+      <strong>User:</strong>
+      <%= @flat.user.email %>
+    </p>
 
-<%= simple_form_for [@flat, @order] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for [@flat, @order] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-primary', class: 'btn btn-outline-light' %>
+      </div>
+    <% end %>
+
+
+    <!-- colocque aqui para poder comprar -->
+    <!-- link pra order -->
+    <%= link_to 'Edit', edit_flat_path(@flat), class: 'btn btn-outline-light' %>
+    <br>
+    <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %>
   </div>
-<% end %>
-
-
-<!-- colocque aqui para poder comprar -->
-<!-- link pra order -->
-<%= link_to 'Edit', edit_flat_path(@flat) %> |
-<%= link_to 'Back', flats_path %>
+</div>

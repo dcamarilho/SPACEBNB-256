@@ -23,24 +23,4 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
-body {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(galaxy.jpg);
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-h1, h2, h3, p, {
-  color: white;
-}
-
-a {
-  color: white !important;
-}
-
-label {
-  color: white;
-}
 
