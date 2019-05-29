@@ -1,22 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @flat.name %>
+<div class="background">
+  <div class="banner"></div>
+  <div class="container">
+
+    <p>
+      <strong>Name:</strong>
+      <%= @flat.name %>
+    </p>
+
+    <p>
+      <strong>Owner Infos:</strong>
+      <br><%= @flat.user.email %>
+      <br><%= @flat.user.phone %>
+    </p>
+
+    <strong>Planet:</strong>
+    <%= @flat.planet %>
+  </p>
+
+  <strong>Price:</strong>
+  <%= @flat.price %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @flat.user.email %>
+<strong>Description:</strong>
+<%= @flat.description %>
 </p>
 
 <%= simple_form_for [@flat, @order] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  </div>
+<div class="form-actions mr-3 mb-3">
+  <%= f.button :submit, class: 'btn btn-primary' %>
+</div>
 <% end %>
 
 
@@ -24,3 +41,5 @@
 <!-- link pra order -->
 <%= link_to 'Edit', edit_flat_path(@flat) %> |
 <%= link_to 'Back', flats_path %>
+</div>
+</div>
