@@ -1,6 +1,12 @@
-<h1>Editing Flat</h1>
+<div class="container">
+  <div class="content-wrapper">
+  <h1>Editing Flat</h1>
 
-<%= render 'form', flat: @flat %>
+  <%= render 'form', flat: @flat %>
 
-<%= link_to 'Show', @flat %> |
-<%= link_to 'Back', flats_path %>
+  <br>
+  <%= link_to 'Show', @flat, class: 'btn btn-outline-light' %>
+  <br>
+  <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %>
+  </div>
+</div>
