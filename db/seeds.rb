@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts 'Creating users...'
 
 users_attributes = [
@@ -13,57 +5,81 @@ users_attributes = [
     firstname: 'John',
     lastname:  'Apple',
     username:  'johnapple',
-    password:  'johnapple',
+    password:  'password',
     email:     'johnapple@gmail.com',
-    phone:     '7499-8233'
+    phone:     '7461-8233'
   },
   {
     firstname: 'Peter',
     lastname:  'Smith',
     username:  'petersmith',
-    password:  'petersmith',
+    password:  'password',
     email:     'petersmith@gmail.com',
     phone:     '7476-8233'
   },
 {
-   firstname: 'John',
-   lastname: 'Lenon',
-   username: 'jonhlenon',
-   password: 'password',
-   email: 'john.lenon@hotmail.com',
-   phone:        '7499-8233'
+    firstname: 'Lewis',
+    lastname:  'Orange',
+    username:  'jonhlenon',
+    password:  'password',
+    email:     'lewisorange@hotmail.com',
+    phone:     '9499-8235'
  },
  {
    firstname: 'Maria',
-   lastname: 'Lenon',
-   username: 'marialenon',
-   password: 'password',
-   email: 'maria.lenon@hotmail.com',
-   phone:        '7499-8233'
+   lastname:  'Rock',
+   username:  'mariarock',
+   password:  'password',
+   email:     'maria.lenon@hotmail.com',
+   phone:     '7499-8233'
+ },
+ {
+   firstname: 'Luke',
+   lastname:  'Pear',
+   username:  'lukepear',
+   password:  'password',
+   email:     'lukepear@hotmail.com',
+   phone:     '7699-8553'
  },
  {
    firstname: 'Joao',
-   lastname: 'Lenon',
-   username: 'jonhlenon',
-   password: 'password',
-   email: 'joao.lenon@hotmail.com',
-   phone:        '7499-8233'
- },
- {
-   firstname: 'Joao',
-   lastname: 'Luis',
-   username: 'joaoluis',
-   password: 'password',
-   email: 'joao.luis@hotmail.com',
-   phone:        '7499-8233'
+   lastname:  'Luis',
+   username:  'joaoluis',
+   password:  'password',
+   email:     'joao.luis@hotmail.com',
+   phone:     '5549-8233'
  },
  {
    firstname: 'Lucas',
-   lastname: 'Lenon',
-   username: 'lucaslenon',
-   password: 'password',
-   email: 'lucas.lenon@hotmail.com',
-   phone:        '7499-8233'
+   lastname:  'Jagger',
+   username:  'lucasjagger',
+   password:  'password',
+   email:     'lucasjagger@hotmail.com',
+   phone:     '2499-4443'
+ },
+  {
+   firstname: 'Sam',
+   lastname:  'Oxford',
+   username:  'samoxford',
+   password:  'password',
+   email:     'samoxford@hotmail.com',
+   phone:     '8809-8553'
+ },
+ {
+   firstname: 'Robert',
+   lastname:  'Heart',
+   username:  'robertheart',
+   password:  'password',
+   email:     'robertheart@hotmail.com',
+   phone:     '5029-8233'
+ },
+ {
+   firstname: 'Daniel',
+   lastname:  'Smith',
+   username:  'danielsmith',
+   password:  'password',
+   email:     'danielsmith@hotmail.com',
+   phone:     '2459-4443'
  },
 ]
 User.create!(users_attributes)
@@ -72,46 +88,205 @@ puts "Created #{User.count} users"
 
 
 
+puts 'Creating flats...'
 
+flat_attributes = [
 
-# puts 'Creating flats...'
+  {
+    name:         'King Size Bed - Artistic Flat - Amazing View',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Earth',
+    address:      '#345-Z5G5',
+    price:        7000,
+    user_id:      '8'
+  },
+  {
+    name:         'Queen Size - Artistic Flat - Amazing View',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Mars',
+    address:      '#345-Z5G5',
+    price:        5000,
+    user_id:      '6'
+  },
+  {
+    name:         'Bæjarins Beztu Pylsur King Size Bed',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Moon',
+    address:      '#345-Z5G5',
+    price:        5600,
+    user_id:      '10'
+  },
+  {
+    name:         'The Muse Haus I - Black Sheep',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Ceres',
+    address:      '#345-Z5G5',
+    price:         7200,
+    user_id:      '5'
+  },
+  {
+    name:         'Queen Size - Artistic Flat - Amazing View',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Mars',
+    address:      '#345-Z5G5',
+    price:        4250,
+    user_id:      '2'
+  },
+  {
+    name:         'The Muse Haus II - Black Sheep',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Venus',
+    address:      '#345-Z5G5',
+    price:        9600,
+    user_id:      '7'
+  },
+  {
+    name:         'Bæjarins Beztu Pylsur',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Earth',
+    address:      '#345-Z5G5',
+    price:        7000,
+    user_id:      '1'
+  },
+  {
+    name:         'Artistic Structure - Amazing View',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Mars',
+    address:      '#345-Z5G5',
+    price:        5000,
+    user_id:      '6'
+  },
+  {
+    name:         'Stroll to Harbor from a Cozy Apartment',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Ceres',
+    address:      '#345-Z5G5',
+    price:        5600,
+    user_id:      '10'
+  },
+  {
+    name:         'The Muse Haus I - Bæjarins Beztu Pylsur',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Ceres',
+    address:      '#345-Z5G5',
+    price:        7200,
+    user_id:      '5'
+  },
+  {
+    name:         'Golden Circle Glaciar',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Mars',
+    address:      '#345-Z5G5',
+    price:        4250,
+    user_id:      '3'
+  },
+  {
+    name:         'Stroll to Harbor from a Cozy House',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Venus',
+    address:      '#345-Z5G5',
+    price:        9600,
+    user_id:      '7'
+  },
+  {
+    name:         'King Size Bed - Artistic Flat - Amazing View',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Earth',
+    address:      '#345-Z5G5',
+    price:        7000,
+    user_id:      '8'
+  },
+  {
+    name:         'Queen Size - Artistic Flat - Amazing View',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Mars',
+    address:      '#345-Z5G5',
+    price:        5000,
+    user_id:      '6'
+  },
+  {
+    name:         'Bæjarins Beztu Pylsur King Size Bed',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Moon',
+    address:      '#345-Z5G5',
+    price:        5600,
+    user_id:      '10'
+  },
+  {
+    name:         'The Muse Haus I - Black Sheep',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Ceres',
+    address:      '#345-Z5G5',
+    price:        7200,
+    user_id:      '1'
+  },
+  {
+    name:         'Queen Size - Artistic Flat - Amazing View',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Mars',
+    address:      '#345-Z5G5',
+    price:        4250,
+    user_id:      '10'
+  },
+  {
+    name:         'The Muse Haus II - Black Sheep',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Venus',
+    address:      '#345-Z5G5',
+    price:        9600,
+    user_id:      '6'
+  },
+  {
+    name:         'Bæjarins Beztu Pylsur',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Earth',
+    address:      '#345-Z5G5',
+    price:        7000,
+    user_id:      '6'
+  },
+  {
+    name:         'Artistic Structure - Amazing View',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Mars',
+    address:      '#345-Z5G5',
+    price:        5000,
+    user_id:      '2'
+  },
+  {
+    name:         'Stroll to Harbor from a Cozy Apartment',
+    description:  'Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard.',
+    planet:       'Ceres',
+    address:      '#345-Z5G5',
+    price:        5600,
+    user_id:      '4'
+  },
+  {
+    name:         'The Muse Haus I - Bæjarins Beztu Pylsur',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Ceres',
+    address:      '#345-Z5G5',
+    price:        7200,
+    user_id:      '4'
+  },
+  {
+    name:         'Golden Circle Glaciar',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Mars',
+    address:      '#345-Z5G5',
+    price:        4250,
+    user_id:      '3'
+  },
+  {
+    name:         'Stroll to Harbor from a Cozy House',
+    description:  'Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had.',
+    planet:       'Venus',
+    address:      '#345-Z5G5',
+    price:        9600,
+    user_id:      '1'
+  },
+]
 
-# flats_attributes = [
-#   {
-#     name:         'MammaMia',
-#     address:      '7 Boundary St, London E2 7JE',
-#     phone_number: '7499-8233',
-#     category:     'italian'
-#   },
-#   {
-#     name:         'Shanghai Kido',
-#     address:      '56A Shoreditch High St, London E1 6PQ',
-#     phone_number: '7399-8293',
-#     category:     'chinese'
-#   },
-#   {
-#     name:         'Belgium Fast',
-#     address:      'Rue de Fontigny 129, Brussels',
-#     phone_number: '2758-8822',
-#     category:     'belgian'
-#   },
-#   {
-#     name:         'Eiffel Restaurant',
-#     address:      '56  Place de la Madeleine, Paris 75011',
-#     phone_number: '8250-0299',
-#     category:     'french'
-#   },
-#   {
-#     name:         'Sushi Place',
-#     address:      '496-1058, Kokufudai, Komatsu-shi, Ishikawa',
-#     phone_number: '4927-2940',
-#     category:     'japanese'
-#   }
-# ]
-# User.create!(users_attributes)
+Flat.create!(flat_attributes)
 
-# puts "Created #{Flat.count} users"
-
-
-
+puts "Created #{Flat.count} flats"
 

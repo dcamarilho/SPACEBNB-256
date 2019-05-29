@@ -4,7 +4,10 @@ before_action :set_flat, only: [:show, :edit, :update]
 
 
   def index
-    @flats = Flat.all
+    a = Flat.all
+    @flats = a.select do |flat|
+      flat.availability == true
+    end
   end
 
   def new

@@ -2,8 +2,8 @@
   <div class="content-wrapper">
     <h1>Editing User</h1>
 
-    <%= render 'form', user: @user %>
+    <%= render 'form', user: current_user %>
     <br>
-    <%= link_to 'Back', @user, class: 'btn btn-outline-dark' %>
+    <%= link_to 'Back', dashboard_path, class: 'btn btn-outline-dark' %>
   </div>
 </div>

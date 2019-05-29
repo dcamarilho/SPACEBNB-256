@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="content-wrapper">
+    <h3>Name:</h3>
+      <p><%= "#{current_user.firstname} #{current_user.lastname}" %></p>
+    <h3>Email:</h3>
+      <p><%= current_user.email %></p>
+    <h3>Phone:</h3>
+      <p><%= current_user.phone %></p>
+
+    <!-- add foto do usuario -->
+    <h3>Your flats:</h3>
+    <p><%= current_user.orders.count %></p>
+
+
+
+    <h3 class="my-4">Other houses from <%= "#{current_user.firstname} #{current_user.lastname}" %></h3>
+
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+          <img class="img-fluid" src="https://source.unsplash.com/1600x900/?space" alt="">
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+          <img class="img-fluid" src="https://source.unsplash.com/1600x900/?house" alt="">
+
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+          <img class="img-fluid" src="https://source.unsplash.com/1600x900/?galaxy" alt="">
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+          <img class="img-fluid" src="https://source.unsplash.com/1600x900/?moon" alt="">
+        </a>
+      </div>
+
+  </div>
+    <!-- ex select all flats where id == current_user ?? -->
+
+    <!-- suas transacoes (show do order)-->
+
+    <!-- delete flat? -->
+    <!-- deleter user -->
+    <br>
+    <%= link_to 'Edit', edit_user_path(current_user), class: 'btn btn-outline-dark' %>
+  </div>
+</div>
+

@@ -4,6 +4,6 @@ class Flat < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :address, presence: true, uniqueness: true
+  validates :address, presence: true
   validates :planet, presence: true
 end

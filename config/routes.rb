@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :orders, only: :show
 
   resources :users, only: [:edit, :update, :show, :destroy]
+
+  get 'dashboard', to: 'users#dashboard'
 end
