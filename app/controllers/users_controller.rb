@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
-
   def dashboard
     @flats = current_user.flats
     @orders = current_user.orders
-
   end
 
   def orders
@@ -13,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
