@@ -10,43 +10,53 @@
   <div class="row">
 
     <div class="col-md-8">
-       <%= cl_image_tag @flat.photo, class: "d-block w-100" %>
-    </div>
-
-
-    <div class="col-md-4">
-      <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success btn-md', data: { confirm: "Are you sure?" } %>    <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %>
-
-
-
-      <h3 class="my-3">Description :</h3>
-      <p><%= @flat.description %></p>
-      <h3 class="my-3">Planet :</h3>
-      <p><%= @flat.planet %></p>
-      <h3 class="my-3">Address :</h3>
-      <p><%= @flat.address %></p>
-      <h3 class="my-3">Owner Info :</h3>
-      <p><%= @flat.user.firstname %> <%= @flat.user.lastname %></p>
-      <h4>Phone:</h4>
-      <p><%= @flat.user.phone %></p>
-      <h3 class="my-3">Price :</h3>
-      <p>Z$ <%= @flat.price %></p>
-    </div>
-
-  </div>
-  <!-- /.row -->
-
-  <!-- Related Projects Row -->
-  <h3 class="my-4">Other houses from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
-
-  <div class="row">
-
-    <div class="col-md-3 col-sm-6 mb-4">
-     <% @otherflats.each do |x| %>
-     <p><%= link_to x.name, x %> at <%= x.planet %> Price: Z$ <%= x.price %></p>
-     <% end %>
+     <%= cl_image_tag @flat.photo, class: "d-block w-100" %>
    </div>
+
+
+   <div class="col-md-4">
+    <% a = current_user.orders.map do |order|  %>
+    <% order.flat %>
+    <% end %>
+
+    <% if a.include?(@flat) || @flat.user == current_user %>
+      <h2>Already Yours!</h2>
+    <% else %>
+    <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success btn-md', data: { confirm: "Are you sure?" } %>
+    <% end %>
+
+    <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %>
+
+
+
+    <h3 class="my-3">Description :</h3>
+    <p><%= @flat.description %></p>
+    <h3 class="my-3">Planet :</h3>
+    <p><%= @flat.planet %></p>
+    <h3 class="my-3">Address :</h3>
+    <p><%= @flat.address %></p>
+    <h3 class="my-3">Owner Info :</h3>
+    <p><%= @flat.user.firstname %> <%= @flat.user.lastname %></p>
+    <h4>Phone:</h4>
+    <p><%= @flat.user.phone %></p>
+    <h3 class="my-3">Price :</h3>
+    <p>Z$ <%= @flat.price %></p>
+  </div>
+
+</div>
+<!-- /.row -->
+
+<!-- Related Projects Row -->
+<h3 class="my-4">Other houses from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
+
+<div class="row">
+
+  <div class="col-md-3 col-sm-6 mb-4">
+   <% @otherflats.each do |x| %>
+   <p><%= link_to x.name, x %> at <%= x.planet %> Price: Z$ <%= x.price %></p>
+   <% end %>
  </div>
+</div>
 </div>
 </div>
 
