@@ -1,13 +1,9 @@
 class FlatsController < ApplicationController
-skip_before_action :authenticate_user!, only: [:index, :show]
-before_action :set_flat, only: [:show, :edit, :update]
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_flat, only: [:show, :edit, :update]
 
   def index
-    a = Flat.all
-    @flats = a.select do |flat|
-      flat.availability == true
-    end
+    @flats = Flat.where(availability: true)
   end
 
   def new
@@ -17,6 +13,7 @@ before_action :set_flat, only: [:show, :edit, :update]
 
   def show
     @order = Order.new
+    @otherflats = @flat.user.flats
   end
 
   def edit
@@ -31,7 +28,6 @@ before_action :set_flat, only: [:show, :edit, :update]
   end
 
   def create
-    # @user = user.find(params[:user_id])
     @flat = Flat.new(flat_params)
     @flat.user = current_user
 
@@ -42,11 +38,11 @@ before_action :set_flat, only: [:show, :edit, :update]
     end
   end
 
-#   def destroys
-#     @flat = flat.find(params[:id])
-#     @flat.destroy
-#     redirect_to flats_url, notice: 'user was successfully destroyed.'
-#   end
+  def destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    redirect_to dashboard_path, notice: "Flat: #{@flat.name} was successfully destroyed."
+  end
 
   private
 
@@ -58,5 +54,3 @@ before_action :set_flat, only: [:show, :edit, :update]
     @flat = Flat.find(params[:id])
   end
 end
-
-

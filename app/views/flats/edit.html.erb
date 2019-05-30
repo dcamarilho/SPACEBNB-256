@@ -1,10 +1,14 @@
 <div class="container">
   <div class="content-wrapper">
-  <h1>Editing Flat</h1>
+    <% if current_user == @flat.user %>
+      <h1>Edit <span class ="span-model">Flat</span> info:</h1>
 
-  <%= render 'form', flat: @flat %>
+      <%= render 'form', flat: @flat %>
 
-  <br>
-  <%= link_to 'Back', @flat, class: 'btn btn-outline-light' %>
+      <br>
+      <% else %>
+        <h3>Sorry <%= current_user.firstname %>, it appears you don't own this flat.</h3>
+      <% end %>
+      <%= link_to 'Back', dashboard_path, class: 'btn btn-outline-light' %>
   </div>
 </div>
