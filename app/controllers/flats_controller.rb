@@ -32,7 +32,7 @@ class FlatsController < ApplicationController
     @flat.user = current_user
 
     if @flat.save
-      redirect_to flats_path, notice: 'Flat was successfully created.'
+      redirect_to @flat, notice: 'Flat was successfully created.'
     else
       render :new
     end
