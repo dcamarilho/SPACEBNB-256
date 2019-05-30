@@ -1,103 +1,65 @@
-<!-- Page Content -->
 <div class="container">
- <div class="content-wrapper">
-  <!-- Portfolio Item Heading -->
-  <h1 class="my-4">
-    <%= @flat.name %>
-  </h1>
-
-  <!-- Portfolio Item Row -->
-  <div class="row">
-
-    <div class="col-md-8">
-     <%= cl_image_tag @flat.photo, class: "d-block w-100" %>
+  <div class="content-wrapper">
+    <h1 class="my-4" style="font-size: 3em;">
+      <%= @flat.name %>
+    </h1>
+    <div class="row">
+      <div class="col-md-8">
+        <%= cl_image_tag @flat.photo, class: "d-block w-100", style: "border-radius: 3px; height: 400px; crop: fill;" %>
+        <div>
+          <h5 class="my-3">Description:</h5>
+          <p><%= @flat.description %></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-flat">
+          <div id="flat-show">
+            <div class="flat-info">
+              <div>
+                <h5 class="my-3">Planet:</h5>
+                <h3><%= @flat.planet %></h3>
+              </div>
+              <div>
+                <h5 class="my-3">Address:</h5>
+                <h3><%= @flat.address %></h3>
+              </div>
+              <div>
+                <h5 class="my-3">Price:</h5>
+                <h3>Z$ <%= @flat.price %></h3>
+              </div>
+            </div>
+            <div class="owner-info">
+              <div>
+                <h5 class="my-3">Owner Info:</h5>
+                <h3><%= @flat.user.firstname %> <%= @flat.user.lastname %></h3>
+              </div>
+              <div>
+                <h5 class="my-3">Phone:</h5>
+                <h3><%= @flat.user.phone %></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+          <% a = current_user.orders.map do |order|  %>
+          <% order.flat %>
+          <% end %>
+          <% if a.include?(@flat) || @flat.user == current_user %>
+          <h2>Already <span class ="span-model">Yours!</span></h2>
+          <% else %>
+          <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success', style: "display: block", data: { confirm: "Are you sure?" } %>
+          <% end %> | <%= link_to 'Back', :back, class: 'btn btn-outline-light', style: 'display: block' %>
+      </div>
+    </div>
+    <!-- Related Projects Row -->
+    <h3 class="my-4">Other flats from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
+    <div class="row">
+      <% @otherflats.each do |x| %>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <p><%= link_to x.name, x %> at <%= x.planet %> Price: Z$ <%= x.price %></p>
+        </div>
+      <% end %>
    </div>
-
-
-   <div class="col-md-4">
-    <% a = current_user.orders.map do |order|  %>
-    <% order.flat %>
-    <% end %>
-
-    <% if a.include?(@flat) || @flat.user == current_user %>
-      <h2>Already Yours!</h2>
-    <% else %>
-    <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success btn-md', data: { confirm: "Are you sure?" } %>
-    <% end %>
-
-    <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %>
-
-
-
-    <h3 class="my-3">Description :</h3>
-    <p><%= @flat.description %></p>
-    <h3 class="my-3">Planet :</h3>
-    <p><%= @flat.planet %></p>
-    <h3 class="my-3">Address :</h3>
-    <p><%= @flat.address %></p>
-    <h3 class="my-3">Owner Info :</h3>
-    <p><%= @flat.user.firstname %> <%= @flat.user.lastname %></p>
-    <h4>Phone:</h4>
-    <p><%= @flat.user.phone %></p>
-    <h3 class="my-3">Price :</h3>
-    <p>Z$ <%= @flat.price %></p>
-  </div>
-
-</div>
-<!-- /.row -->
-
-<!-- Related Projects Row -->
-<h3 class="my-4">Other houses from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
-
-<div class="row">
-
-  <div class="col-md-3 col-sm-6 mb-4">
-   <% @otherflats.each do |x| %>
-   <p><%= link_to x.name, x %> at <%= x.planet %> Price: Z$ <%= x.price %></p>
-   <% end %>
  </div>
 </div>
 </div>
-</div>
-
-</div>
-
-<!-- /.container -->
-
-<!--
-  <div class="container">
-    <div class="content-wrapper">
-
-      <h3>Name:</h3>
-      <p><%#= @flat.name %></p>
-
-      <h3>Owner Infos:</h3>
-        <p><%= @flat.user.email %></p>
-        <p><%= @flat.user.phone %></p>
-
-      <h3>Planet:</h3>
-        <p><%= @flat.planet %></p>
-      <h3>Price:</h3>
-      <p><%= @flat.price %></p>
-
-      <h3>Description:</h3>
-      <p><%= @flat.description %></p>
-
-
-  <%#= simple_form_for [@flat, @order] do |f| %>
-  <%#= f.error_notification %>
-  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <br>
-      <%#= f.button :submit, class: 'btn btn-outline-light' %>
-
-  <%# end %>
-
-
-  <!-- colocque aqui para poder comprar -->
-  <!-- link pra order -->
-
-
-
-
-
 

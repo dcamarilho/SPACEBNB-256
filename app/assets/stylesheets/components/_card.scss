@@ -24,3 +24,16 @@
   background-color: #100A30;
 }
 
+.card-flat {
+  opacity: 0.7;
+  background-color: #372b68;
+  border-radius: 3px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#flat-show {
+  display: flex;
+  justify-content: space-between;
+}
+
