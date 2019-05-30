@@ -13,6 +13,7 @@ class FlatsController < ApplicationController
 
   def show
     @order = Order.new
+    @otherflats = @flat.user.flats
   end
 
   def edit
