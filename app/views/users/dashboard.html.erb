@@ -6,12 +6,10 @@
       <p><%= current_user.email %></p>
     <h3>Phone:</h3>
       <p><%= current_user.phone %></p>
-    <h3>Upload your profile picture:</h3>
-    <!-- add foto do usuario -->
     <h3>You have bought <span class ="span-model"><%= current_user.orders.count %> flats:</span></h3>
 
     <% current_user.orders.each do |x| %>
-      <p><%= x.flat.name %> at <%= x.flat.planet %> Price: Z$ <%= x.flat.price %></p>
+    <p><%= x.flat.name %> at <%= x.flat.planet %> Price: Z$ <%= x.flat.price %></p>
     <% end %>
 
     <h3 class="my-4">Your current flats for sale:</h3>
