@@ -1,6 +1,6 @@
 <!-- Page Content -->
 <div class="container">
-   <div class="content-wrapper">
+ <div class="content-wrapper">
   <!-- Portfolio Item Heading -->
   <h1 class="my-4">
     <%= @flat.name %>
@@ -10,8 +10,9 @@
   <div class="row">
 
     <div class="col-md-8">
-      <img class="img-fluid" src="https://source.unsplash.com/1600x900/?space,house" alt="">
+       <%= cl_image_tag @flat.photo, class: "d-block w-100" %>
     </div>
+
 
     <div class="col-md-4">
       <%= link_to 'Edit', edit_flat_path(@flat), class: 'btn btn-outline-light' %> | <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %> |
@@ -69,7 +70,7 @@
 
   </div>
 </div>
-  </div>
+</div>
 </div>
 <!-- /.container -->
 
@@ -105,7 +106,7 @@
   <!-- colocque aqui para poder comprar -->
   <!-- link pra order -->
 
-  </div>
+</div>
 </div>
 -->
 
