@@ -1,12 +1,14 @@
 <div class="container">
   <div class="content-wrapper">
-          <%= link_to 'Create a Flat', new_flat_path, class: 'btn btn-outline-light' %>
-          <h2>See all <span class ="span-model">Flats</span></h2>
+    <div class="d-flex justify-content-center">
+      <%= link_to 'Create a Flat', new_flat_path, class: 'btn btn-outline-light' %>
+    </div>
+    <h2 style="margin-left: 460px; margin-top: 20px;">See all <span class ="span-model">Flats</span></h2>
     <div class="row ">
       <% @flats.each do |flat| %>
-      <div class="col-lg-3 mb-3 mt-3">
+      <div class="col-lg-3 mb-3 mt-5">
         <div class="card w-100">
-          <%= cl_image_tag flat.photo, class: "d-block w-100" %>
+          <%= cl_image_tag flat.photo, class: "d-block w-100 rounded" %>
           <div class="card-body">
             <p class="card-text">
               <p>Name: <%= link_to flat.name, flat %></p>
@@ -16,8 +18,8 @@
             </div>
           </div>
         </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 
