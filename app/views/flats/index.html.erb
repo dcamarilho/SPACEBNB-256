@@ -6,7 +6,7 @@
       <% @flats.each do |flat| %>
       <div class="col-lg-3 mb-3 mt-3">
         <div class="card w-100">
-          <%= cl_image_tag flat.photo, class: "d-block w-100" %>
+          <%= cl_image_tag flat.photo, class: "d-block w-100 rounded" %>
           <div class="card-body">
             <p class="card-text">
               <p>Name: <%= link_to flat.name, flat %></p>
