@@ -18,7 +18,7 @@
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.file.nil? %>
-            <%= image_tag 'https://images.homedepot-static.com/productImages/fc91cb23-b6db-4d32-b02a-f1ed61dd39a8/svn/folkstone-matte-formica-laminate-sheets-009271258408000-64_400_compressed.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" } %>
+            <%= image_tag 'https://cdn0.iconfinder.com/data/icons/avatar-4/512/Astronaut-512.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" } %>
           <% else %>
             <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
