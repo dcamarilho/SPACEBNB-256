@@ -15,17 +15,17 @@
     <% end %>
 
     <h3 class="my-4">Your current flats for sale:</h3>
-    <% current_user.flats.each do |flat| %>
-      <div class="row">
-        <div class="col-md-3 col-sm-6 mb-4">
-          <%= link_to flat.name, flat %>
+      <% current_user.flats.each do |flat| %>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-4">
+            <%= link_to flat.name, flat %>
             <img class="img-fluid" src="https://source.unsplash.com/1600x900/?space" alt="">
             <br>
             <br>
-            <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-outline-light' %> | <%= link_to "Delete", flat_path(flat), method: :delete, data: { confirm: "Are you sure you want to delete this flat?" }, class: 'btn btn-outline-light' %>
+            <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-outline-light btn-sm' %> | <%= link_to "Delete", flat_path(flat), method: :delete, data: { confirm: "Are you sure you want to delete this flat?" }, class: 'btn btn-outline-danger btn-sm' %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
 
