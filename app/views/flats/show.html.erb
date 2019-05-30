@@ -1,6 +1,6 @@
 <!-- Page Content -->
 <div class="container">
-   <div class="content-wrapper">
+ <div class="content-wrapper">
   <!-- Portfolio Item Heading -->
   <h1 class="my-4">
     <%= @flat.name %>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="col-md-4">
-      <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-light', data: { confirm: "Are you sure?" } %>  | <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %>
+      <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success btn-md', data: { confirm: "Are you sure?" } %>    <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %>
 
 
 
@@ -36,38 +36,18 @@
   <!-- /.row -->
 
   <!-- Related Projects Row -->
-  <h3 class="my-4">Other houses from <%= @flat.user.firstname %> <%= @flat.user.lastname %></h3>
+  <h3 class="my-4">Other houses from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
 
   <div class="row">
 
     <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="https://source.unsplash.com/1600x900/?space" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="https://source.unsplash.com/1600x900/?house" alt="">
-
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="https://source.unsplash.com/1600x900/?galaxy" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="https://source.unsplash.com/1600x900/?moon" alt="">
-      </a>
-    </div>
-
-  </div>
+     <% @otherflats.each do |x| %>
+     <p><%= link_to x.name, x %> at <%= x.planet %> Price: Z$ <%= x.price %></p>
+     <% end %>
+   </div>
+ </div>
 </div>
-  </div>
+</div>
 </div>
 <!-- /.container -->
 
@@ -103,7 +83,7 @@
   <!-- colocque aqui para poder comprar -->
   <!-- link pra order -->
 
-  </div>
+</div>
 </div>
 -->
 
