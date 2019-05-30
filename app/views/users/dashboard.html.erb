@@ -9,7 +9,7 @@
     <h3>You have bought <span class ="span-model"><%= current_user.orders.count %> flats:</span></h3>
 
     <% current_user.orders.each do |x| %>
-    <p><%= x.flat.name %> at <span class="span-dashboard"><%= x.flat.planet %></span> Price: Z$ <%= x.flat.price %></p>
+    <p><%= link_to x.flat.name, x.flat %> at <span class="span-dashboard"><%= x.flat.planet %></span> Price: Z$ <%= x.flat.price %></p>
     <% end %>
 
     <h3 class="my-4">Your current flats for <span class="span-model">sale:</span></h3>
