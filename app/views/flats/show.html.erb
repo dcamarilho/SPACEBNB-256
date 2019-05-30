@@ -10,8 +10,9 @@
   <div class="row">
 
     <div class="col-md-8">
-      <img class="img-fluid" src="https://source.unsplash.com/1600x900/?space,house" alt="">
+       <%= cl_image_tag @flat.photo, class: "d-block w-100" %>
     </div>
+
 
     <div class="col-md-4">
       <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success btn-md', data: { confirm: "Are you sure?" } %>    <%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %>
@@ -48,7 +49,9 @@
  </div>
 </div>
 </div>
+
 </div>
+
 <!-- /.container -->
 
 <!--
@@ -83,9 +86,8 @@
   <!-- colocque aqui para poder comprar -->
   <!-- link pra order -->
 
-</div>
-</div>
--->
+
+
 
 
 
