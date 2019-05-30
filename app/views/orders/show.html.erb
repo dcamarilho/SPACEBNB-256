@@ -1,6 +1,8 @@
 <div class="container">
-  <div class="content-wrapper">
-    <h1>Parabens ordem criada</h1>
+  <div class="content-wrapper" id="order-details">
+    <h3>Congrats, you just bought a home in <span class="span-model"><%= @order.flat.planet %></span></h3>
+    <h3>From <span class="span-model"><%= @order.user.firstname %> <%= @order.user.lastname %></span></h3>
+    <h3>By the price of <span class="span-model">Z$<%= @order.flat.price %></span></h3>
     <p><%= link_to 'Back', flats_path, class: 'btn btn-outline-light' %></p>
   </div>
 </div>

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="content-wrapper">
-          <%= link_to 'Crete a flat', new_flat_path, class: 'btn btn-outline-light' %>
+          <%= link_to 'Create a Flat', new_flat_path, class: 'btn btn-outline-light' %>
+          <h2>See all <span class ="span-model">Flats</span></h2>
     <div class="row ">
       <% @flats.each do |flat| %>
       <div class="col-lg-3 mb-3 mt-3">
@@ -11,7 +12,7 @@
               <p>Name: <%= link_to flat.name, flat %></p>
               <p>Description: <%= flat.description %></p>
               <p>Planet: <%= flat.planet %></p>
-              <p>Price: <%= flat.price %></p></p>
+              <p>Price: Z$ <%= flat.price %></p></p>
             </div>
           </div>
         </div>
