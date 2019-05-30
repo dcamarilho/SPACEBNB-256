@@ -8,18 +8,18 @@
       <% @flats.each do |flat| %>
       <div class="col-lg-3 mb-3 mt-5">
         <div class="card w-100">
-          <%= cl_image_tag flat.photo, class: "d-block w-100 rounded" %>
-          <div class="card-body">
+          <%= cl_image_tag flat.photo, class: "d-block w-100", style: "height: 232px;" %>
+          <div class="card-body" style="height: 400px; ">
             <p class="card-text">
               <p>Name: <%= link_to flat.name, flat %></p>
-              <p>Description: <%= flat.description %></p>
+              <p>Description: <%= flat.description.first(200) %>...</p>
               <p>Planet: <%= flat.planet %></p>
               <p>Price: Z$ <%= flat.price %></p></p>
             </div>
           </div>
         </div>
         <% end %>
-      </div>
     </div>
   </div>
+</div>
 

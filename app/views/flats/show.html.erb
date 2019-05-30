@@ -8,7 +8,7 @@
         <%= cl_image_tag @flat.photo, class: "d-block w-100", style: "border-radius: 3px; height: 400px; crop: fill;" %>
         <div>
           <h5 class="my-3">Description:</h5>
-          <p><%= @flat.description %></p>
+          <p style="text-align: justify;"><%= @flat.description %></p>
         </div>
       </div>
       <div class="col-md-4">
@@ -51,10 +51,11 @@
       </div>
     </div>
     <!-- Related Projects Row -->
-    <h3 class="my-4">Other flats from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
+    <h3 class="my-4">All flats from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
     <div class="row">
       <% @otherflats.each do |x| %>
         <div class="col-md-3 col-sm-6 mb-4">
+          <%= cl_image_tag x.photo, class: "d-block w-100", style: "border-radius: 3px; height: 160px; crop: fill;" %>
           <p><%= link_to x.name, x %> at <%= x.planet %> Price: Z$ <%= x.price %></p>
         </div>
       <% end %>
