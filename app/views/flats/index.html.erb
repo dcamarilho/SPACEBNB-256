@@ -1,8 +1,15 @@
 <div class="container">
   <div class="content-wrapper">
     <div class="d-flex justify-content-center">
-      <%= link_to 'Create a Flat', new_flat_path, class: 'btn btn-outline-light' %>
+      <%= form_tag flats_path, method: :get, :class => 'form-search'  do %>
+        <div class="input-append">
+          <%= select_tag "planet", options_for_select(Flat.order(:planet).pluck(:planet).uniq) %>
+          <button type="submit" class="btn btn-primary btn-sm">Explore</button>
+        </div>
+      <% end %>
     </div>
+
+
     <h2 style="margin-left: 460px; margin-top: 20px;">See all <span class ="span-model">Flats</span></h2>
     <div class="row ">
       <% @flats.each do |flat| %>
@@ -19,6 +26,9 @@
           </div>
         </div>
         <% end %>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= paginate @flats %>
     </div>
   </div>
 </div>

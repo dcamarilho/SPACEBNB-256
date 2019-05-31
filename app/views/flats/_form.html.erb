@@ -2,15 +2,14 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+  <div class="form-inputs" style="color: white; font-weight: bolder;">
     <%= f.input :name, placeholder: 'ex: The Muse Haus II - Black Sheep'%>
     <%= f.input :description, placeholder: 'ex: Another journey chamber way yet females man. Way extensive and dejection get delivered deficient sincerity gentleman age. '%>
-    <%= f.input :planet, placeholder: 'ex: Mars'%>
+    <%= f.input :planet, collection: ["Mars", "Venus", "Saturn", "Moon", "Europa", "Ceres"] %>
     <%= f.input :address, placeholder: 'ex: District 201' %>
     <%= f.input :price, placeholder: '5000' %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-
   </div>
 
   <div class="form-actions">

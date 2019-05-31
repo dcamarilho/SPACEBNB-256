@@ -4,6 +4,13 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.where(availability: true)
+
+
+    if params[:planet].present?
+      @flats = Flat.global_search(params[:planet]).page(params[:page]).per(4)
+    else
+      @flats = Flat.page(params[:page]).per(4)
+    end
   end
 
   def new
