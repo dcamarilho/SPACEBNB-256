@@ -16,7 +16,10 @@
         <li class="nav-item">
           <%= link_to 'Create a Flat', new_flat_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <%= link_to 'See all Flats', flats_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown ml-4 mr-1">
           <% if current_user.photo.file.nil? %>
             <%= image_tag 'https://cdn0.iconfinder.com/data/icons/avatar-4/512/Astronaut-512.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" } %>
           <% else %>
