@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="content-wrapper">
+  <div class="content-wrapper simple-form">
     <% if current_user == @flat.user %>
-      <h1>Edit <span class ="span-model">Colony</span> info:</h1>
+      <h1 style="text-align: center;">Edit <span class ="span-model">Colony</span> info:</h1>
 
       <%= render 'form', flat: @flat %>
 
@@ -9,6 +9,6 @@
       <% else %>
         <h3>Sorry <%= current_user.firstname %>, it appears you don't own this colony...</h3>
       <% end %>
-      <%= link_to 'Back', dashboard_path, class: 'btn btn-outline-light' %>
+      <%= link_to 'Back', dashboard_path, class: 'btn btn-outline-light', style: 'display: block; margin: 0 192px 0 192px;' %>
   </div>
 </div>
