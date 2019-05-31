@@ -31,7 +31,11 @@
             <div class="owner-info">
               <div>
                 <h5 class="my-3">Owner Info:</h5>
+                <% if @flat.availability? %>
                 <h3><%= @flat.user.firstname %> <%= @flat.user.lastname %></h3>
+                <% else %>
+                 <h3><%= current_user.firstname %> <%= current_user.lastname %> </h3>
+                 <% end %>
               </div>
               <div>
                 <h5 class="my-3">Phone:</h5>
@@ -59,7 +63,7 @@
       </div>
     </div>
     <!-- Related Projects Row -->
-    <h3 class="my-4">All flats from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
+    <h3 class="my-4">All Colonies from <span class="span-model"><%= @flat.user.firstname %> <%= @flat.user.lastname %></span></h3>
     <div class="row">
       <% @otherflats.each do |x| %>
         <div class="col-md-3 col-sm-6 mb-4">

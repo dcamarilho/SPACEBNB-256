@@ -7,9 +7,9 @@ class FlatsController < ApplicationController
 
 
     if params[:planet].present?
-      @flats = Flat.global_search(params[:planet]).page(params[:page]).per(4)
+      @flats = Flat.global_search(params[:planet]).page(params[:page]).per(8)
     else
-      @flats = Flat.page(params[:page]).per(4)
+      @flats = Flat.page(params[:page]).per(8)
     end
   end
 

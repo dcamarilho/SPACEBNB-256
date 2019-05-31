@@ -10,7 +10,7 @@
     </div>
 
 
-    <h2 style="margin-left: 460px; margin-top: 20px;">See all <span class ="span-model">Flats</span></h2>
+    <h2 style="margin-left: 450px; margin-top: 20px;">All <span class ="span-model">Colonies</span></h2>
     <div class="row ">
       <% @flats.each do |flat| %>
       <div class="col-lg-3 mb-3 mt-5">
@@ -18,17 +18,19 @@
           <%= cl_image_tag flat.photo, class: "d-block w-100", style: "height: 232px;" %>
           <div class="card-body" style="height: 400px; ">
             <p class="card-text">
-              <p>Name: <%= link_to flat.name, flat %></p>
-              <p>Description: <%= flat.description.first(200) %>...</p>
-              <p>Planet: <%= flat.planet %></p>
-              <p>Price: Z$ <%= flat.price %></p></p>
+              <p><strong>Name: </strong><%= link_to flat.name, flat %></p>
+              <p><strong>Description: </strong><%= flat.description.first(200) %>...</p>
+              <p><strong>Planet: </strong><%= flat.planet %></p>
+              <p><strong>Price:</strong> Z$ <%= flat.price %></p></p>
             </div>
           </div>
         </div>
         <% end %>
     </div>
     <div class="d-flex justify-content-center">
-      <%= paginate @flats %>
+      <div class="d-flex justify-content-space-around">
+        <%= paginate @flats %>
+      </div>
     </div>
   </div>
 </div>
