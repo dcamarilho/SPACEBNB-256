@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content-wrapper text-center">
     <% if current_user.photo.file.nil? %>
-    <%= image_tag 'https://cdn0.iconfinder.com/data/icons/avatar-4/512/Astronaut-512.png', style:"border-radius:50%, height:200px; margin-bottom: 40px;" %>
+    <%= image_tag 'https://cdn0.iconfinder.com/data/icons/avatar-4/512/Astronaut-512.png', style:"border-radius:50%; height:200px; margin-bottom: 40px;" %>
     <% else %>
     <%= cl_image_tag current_user.photo, style:"border-radius:50%; height:200px;  margin-bottom: 40px;" %>
     <% end %>
@@ -18,7 +18,7 @@
     <% end %>
 
     <h3 class="my-4 text-center" >Your current colonies for <span class="span-model">sale:</span></h3>
-     <%= link_to 'Create a Colony', new_flat_path, class: 'btn btn-outline-light my-3' %>
+     <%= link_to 'Create a Colony', new_flat_path, class: 'btn btn-outline-primary my-3' %>
     <div class="row d-flex justify-content-around">
       <% current_user.flats.each do |flat| %>
       <div class="col-md-3 col-sm-6 mb-4 mt-5" >
