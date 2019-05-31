@@ -6,15 +6,15 @@
     <%= cl_image_tag current_user.photo, style:"border-radius:50%; height:200px;  margin-bottom: 40px;" %>
     <% end %>
     <h3 class="text-center">Name:</h3>
-    <p class="text-center"><%= "#{current_user.firstname} #{current_user.lastname}" %></p>
+    <h5 class="text-center"><%= "#{current_user.firstname} #{current_user.lastname}" %></h5>
     <h3 class="text-center">Email:</h3>
-    <p class="text-center"><%= current_user.email %></p>
+    <h5 class="text-center"><%= current_user.email %></h5>
     <h3 class="text-center">Phone:</h3>
-    <p class="text-center"><%= current_user.phone %></p>
+    <h5 class="text-center"><%= current_user.phone %></h5>
     <h3 class="text-center">You have bought <span class ="span-model"><%= current_user.orders.count %> colonies:</span></h3>
 
     <% current_user.orders.each do |x| %>
-    <p class="text-center"><%= link_to x.flat.name, x.flat %> at <span class="span-dashboard"><%= x.flat.planet %></span> Price: Z$ <%= x.flat.price %></p>
+    <h5 class="text-center"><%= link_to x.flat.name, x.flat %> at <span class="span-dashboard"><%= x.flat.planet %></span> Price: Z$ <%= x.flat.price %></h5>
     <% end %>
 
     <h3 class="my-4 text-center" >Your current colonies for <span class="span-model">sale:</span></h3>
@@ -22,8 +22,8 @@
     <div class="row d-flex justify-content-around">
       <% current_user.flats.each do |flat| %>
       <div class="col-md-3 col-sm-6 mb-4 mt-5" >
-        <%= link_to flat.name, flat %>
-        <p class="text-center">Z$ <%= flat.price %></p>
+        <h3><%= link_to flat.name, flat %></h3>
+        <h5 class="text-center">Z$ <%= flat.price %></h5>
         <%= cl_image_tag flat.photo, class: "d-block w-100 rounded", style: "height: 160px; crop: fill;" %>
         <br>
         <br>
