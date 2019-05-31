@@ -8,4 +8,11 @@ class Flat < ApplicationRecord
   validates :planet, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  include PgSearch
+  pg_search_scope :global_search,
+                  against: [:planet],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
