@@ -40,14 +40,22 @@
             </div>
           </div>
         </div>
-          <% a = current_user.orders.map do |order|  %>
-          <% order.flat %>
-          <% end %>
-          <% if a.include?(@flat) || @flat.user == current_user %>
-          <h2>Already <span class ="span-model">Yours!</span></h2>
+          <% if user_signed_in? %>
+
+            <% a = current_user.orders.map do |order|  %>
+              <% order.flat %>
+            <% end %>
+
+            <% if a.include?(@flat) || @flat.user == current_user %>
+              <h2>Already <span class ="span-model">Yours!</span></h2>
+            <% else %>
+              <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success', style: "display: block", data: { confirm: "Are you sure?" } %>
+            <% end %> | <%= link_to 'Back', :back, class: 'btn btn-outline-light', style: 'display: block' %>
+
           <% else %>
-          <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success', style: "display: block", data: { confirm: "Are you sure?" } %>
-          <% end %> | <%= link_to 'Back', :back, class: 'btn btn-outline-light', style: 'display: block' %>
+            <%= link_to 'Buy', flat_orders_path(@flat), method: :post, class: 'btn btn-outline-success', style: "display: block", data: { confirm: "Are you sure?" } %>
+             | <%= link_to 'Back', :back, class: 'btn btn-outline-light', style: 'display: block' %>
+          <% end %>
       </div>
     </div>
     <!-- Related Projects Row -->
