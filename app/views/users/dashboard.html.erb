@@ -11,14 +11,14 @@
     <p class="text-center"><%= current_user.email %></p>
     <h3 class="text-center">Phone:</h3>
     <p class="text-center"><%= current_user.phone %></p>
-    <h3 class="text-center">You have bought <span class ="span-model"><%= current_user.orders.count %> flats:</span></h3>
+    <h3 class="text-center">You have bought <span class ="span-model"><%= current_user.orders.count %> colonies:</span></h3>
 
     <% current_user.orders.each do |x| %>
     <p class="text-center"><%= link_to x.flat.name, x.flat %> at <span class="span-dashboard"><%= x.flat.planet %></span> Price: Z$ <%= x.flat.price %></p>
     <% end %>
 
-    <h3 class="my-4 text-center" >Your current flats for <span class="span-model">sale:</span></h3>
-     <%= link_to 'Create a Flat', new_flat_path, class: 'btn btn-outline-light my-3' %>
+    <h3 class="my-4 text-center" >Your current colonies for <span class="span-model">sale:</span></h3>
+     <%= link_to 'Create a Colony', new_flat_path, class: 'btn btn-outline-light my-3' %>
     <div class="row d-flex justify-content-around">
       <% current_user.flats.each do |flat| %>
       <div class="col-md-3 col-sm-6 mb-4 mt-5" >
